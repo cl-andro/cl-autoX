@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.stub'
     compileSdkVersion 31
     defaultConfig {
         minSdkVersion 14
