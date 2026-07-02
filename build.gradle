@@ -79,6 +79,14 @@ subprojects {
                     url 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
                     credentials(PasswordCredentials)
                 }
+                maven {
+                    name = 'github'
+                    url = uri("https://maven.pkg.github.com/cl-andro/cl-autoX")
+                    credentials {
+                        username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                        password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+                    }
+                }
             }
         }
     }
