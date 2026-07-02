@@ -39,6 +39,19 @@ allprojects {
 rootProject.group = 'com.clauto.cl'
 
 subprojects {
+    plugins.withId('com.android.library') {
+        androidComponents {
+            beforeVariants(selector().all()) { variantBuilder ->
+                if (!project.file("src/androidTest").exists()) {
+                    variantBuilder.enableAndroidTest = false
+                }
+                if (!project.file("src/test").exists()) {
+                    variantBuilder.enableUnitTest = false
+                }
+            }
+        }
+    }
+
     afterEvaluate { project ->
         if (!plugins.hasPlugin('maven-publish')) {
             return
@@ -111,7 +124,9 @@ subprojects {
             publishing {
                 singleVariant("release") {
                     withSourcesJar()
-                    withJavadocJar()
+                    if (project.hasProperty('withJavadoc')) {
+                        withJavadocJar()
+                    }
                 }
             }
         }
