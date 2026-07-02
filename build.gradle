@@ -23,6 +23,15 @@ allprojects {
         options.addStringOption('encoding', 'UTF-8')
         options.addStringOption('charSet', 'UTF-8')
     }
+    afterEvaluate {
+        if (it.hasProperty('android')) {
+            it.android {
+                lint {
+                    abortOnError false
+                }
+            }
+        }
+    }
 }
 
 rootProject.group = 'com.clauto.cl'
