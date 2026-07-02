@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.lifecycle.viewmodel.lazy'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 14

@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.lifecycle.resource.livedata'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 14

@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.compatibility'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 14

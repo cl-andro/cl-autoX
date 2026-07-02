@@ -7,6 +7,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.material'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 23

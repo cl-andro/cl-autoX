@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.preference.simplemenu'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 16

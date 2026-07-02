@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.core'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 21

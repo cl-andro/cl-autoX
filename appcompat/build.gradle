@@ -7,6 +7,7 @@ plugins {
 }
 
 android {
+    namespace 'androidx.appcompat'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 23

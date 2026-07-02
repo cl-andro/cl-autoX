@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.material.chooser'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 23

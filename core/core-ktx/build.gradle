@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.core.ktx'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 21

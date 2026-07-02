@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.lifecycle.shared.viewmodel'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 14

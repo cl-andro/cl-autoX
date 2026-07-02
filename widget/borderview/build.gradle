@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.widget.borderview'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 17

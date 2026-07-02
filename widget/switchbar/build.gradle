@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.widget.switchbar'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 21

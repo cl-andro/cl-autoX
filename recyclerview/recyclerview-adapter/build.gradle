@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.recyclerview.adapter'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 14

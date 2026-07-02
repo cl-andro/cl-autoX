@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.clauto.preference.multiprocess'
     compileSdkVersion target_sdk
     defaultConfig {
         minSdkVersion 21
