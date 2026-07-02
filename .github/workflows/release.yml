@@ -36,6 +36,8 @@ jobs:
 
       - name: Build
         run: ./gradlew build --no-daemon
+        env:
+          GPR_READ_TOKEN: ${{ secrets.GPR_READ_TOKEN }}
 
       - name: Publish to GitHub Packages
         run: ./gradlew publishAllPublicationsToGitHubRepository --no-daemon

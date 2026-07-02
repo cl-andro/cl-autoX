@@ -8,7 +8,7 @@ pluginManagement {
             url("https://maven.pkg.github.com/cl-andro/clauto-material-theme")
             credentials {
                 username = findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
-                password = findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+                password = findProperty("gpr.read.key") ?: System.getenv("GPR_READ_TOKEN") ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
