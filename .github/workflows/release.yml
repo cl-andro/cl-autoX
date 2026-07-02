@@ -41,12 +41,10 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
-      - name: Clean stale build outputs
-        run: ./gradlew clean --no-daemon
-
       - name: Build
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build --no-daemon --no-build-cache
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GPR_READ_TOKEN: ${{ secrets.GPR_READ_TOKEN }}
 
       - name: Publish to GitHub Packages
