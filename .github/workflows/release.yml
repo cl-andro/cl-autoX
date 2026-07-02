@@ -41,6 +41,9 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
+      - name: Clean stale build outputs
+        run: ./gradlew clean --no-daemon
+
       - name: Build
         run: ./gradlew build --no-daemon
         env:
