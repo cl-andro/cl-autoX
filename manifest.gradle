@@ -1,5 +1,5 @@
 ext {
-    kotlin_coroutines_version = '1.5.1'
+    kotlin_coroutines_version = '1.8.1'
 
     target_sdk = 34
 
