@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Material">
+        <!-- Alert color, such as error or dangerous action. -->
+        <attr name="colorAlert" format="color" />
+        <!-- Safe color, such as a safe state. -->
+        <attr name="colorSafe" format="color" />
+        <!-- Warning color, such as a warning text. -->
+        <attr name="colorWarning" format="color" />
+        <!-- Inactive color. -->
+        <attr name="colorInactive" format="color" />
+        <!-- Color for cards. -->
+        <attr name="cardBackground" format="reference" />
+
+        <attr name="outlineButtonStyle" format="reference" />
+        <attr name="outlineButtonBackground" format="reference" />
+        <attr name="outlineButtonForeground" format="reference" />
+
+        <attr name="appBarStyle" format="reference" />
+
+        <attr name="toolbarColor" format="color|reference" />
+
+        <attr name="notificationColor" format="color|reference" />
+
+        <attr name="navigationBarDividerColor" format="color|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialComponentsExpand">
+        <attr name="materialButtonHorizontalMarginAmend" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RaisedView">
+        <attr name="state_raised" format="boolean" />
+    </declare-styleable>
+
+</resources>

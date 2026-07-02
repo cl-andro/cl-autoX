@@ -1,0 +1,31 @@
+plugins {
+    id('com.android.library')
+    id('maven-publish')
+    id('signing')
+}
+
+android {
+    compileSdkVersion target_sdk
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion target_sdk
+        versionCode 1
+        versionName clauto_annotation_version
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+ext {
+    POM_NAME = "ClautoX Annotation"
+    POM_DESCRIPTION = "ClautoX Annotation"
+}

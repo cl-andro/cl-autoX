@@ -1,0 +1,109 @@
+buildscript {
+    apply from: 'manifest.gradle'
+    repositories {
+        mavenCentral()
+        google()
+        maven { url 'https://jitpack.io' }
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'com.clauto.tools.materialthemebuilder:gradle-plugin:1.5.1'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.4.2' apply false
+    id 'com.android.library' version '7.4.2' apply false
+    id 'org.jetbrains.kotlin.jvm' version '2.0.20' apply false
+}
+
+allprojects {
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+        options.addStringOption('charSet', 'UTF-8')
+    }
+}
+
+rootProject.group = 'com.clauto.cl'
+
+subprojects {
+    afterEvaluate { project ->
+        if (!plugins.hasPlugin('maven-publish')) {
+            return
+        }
+
+        if (project.parent == rootProject) {
+            group = "${rootProject.group}.${project.name}"
+        } else {
+            group = "${rootProject.group}.${project.parent.name}"
+        }
+        version = android.defaultConfig.versionName
+        println("${project.displayName}: ${group}:${project.name}:${version}")
+
+        publishing {
+            publications {
+                mavenJava(MavenPublication) {
+                    group project.group
+                    artifactId project.name
+                    version android.defaultConfig.versionName
+                    afterEvaluate {
+                        from components.release
+                    }
+                    pom {
+                        name = POM_NAME
+                        description = POM_DESCRIPTION
+                        url = 'https://github.com/ClautoW/ClautoX'
+                        licenses {
+                            license {
+                                name = 'MIT License'
+                                url = 'https://github.com/ClautoW/ClautoX/blob/master/LICENSE'
+                            }
+                        }
+                        developers {
+                            developer {
+                                name = 'Clauto'
+                                url = 'https://github.com/ClautoW'
+                            }
+                        }
+                        scm {
+                            connection = 'scm:git@github.com:ClautoW/ClautoX.git'
+                            url = 'https://github.com/ClautoW/ClautoX'
+                        }
+                    }
+                }
+            }
+            repositories {
+                maven {
+                    name 'ossrh'
+                    url 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+                    credentials(PasswordCredentials)
+                }
+            }
+        }
+    }
+
+    afterEvaluate {
+        if (!plugins.hasPlugin('signing')) {
+            return
+        }
+
+        android {
+            publishing {
+                singleVariant("release") {
+                    withSourcesJar()
+                    withJavadocJar()
+                }
+            }
+        }
+
+        signing {
+            useGpgCmd()
+            sign publishing.publications
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

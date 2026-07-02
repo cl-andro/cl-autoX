@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.V27.Material3.Light.Clauto" parent="Base.V23.Material3.Light.Clauto">
+        <item name="android:navigationBarColor">?android:colorBackground</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <style name="Base.V27.Material3.Dark.Clauto" parent="Base.V23.Material3.Dark.Clauto">
+        <item name="android:navigationBarColor">?android:colorBackground</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <style name="Base.Material3.Light.Clauto" parent="Base.V27.Material3.Light.Clauto" />
+    <style name="Base.Material3.Dark.Clauto" parent="Base.V27.Material3.Dark.Clauto" />
+
+</resources>

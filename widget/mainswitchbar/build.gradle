@@ -1,0 +1,41 @@
+plugins {
+    id('com.android.library')
+    id('maven-publish')
+    id('signing')
+}
+
+android {
+    compileSdkVersion target_sdk
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion target_sdk
+        versionCode 1
+        versionName '1.1.0'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    buildFeatures {
+        buildConfig = false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation "androidx.annotation:annotation:$androidx_annotation_version"
+    implementation "androidx.core:core:$androidx_core_version"
+    implementation project(':material:material')
+    compileOnly "androidx.preference:preference:$androidx_preference_version"
+}
+
+ext {
+    POM_NAME = "ClautoX SwitchBar"
+    POM_DESCRIPTION = "ClautoX SwitchBar"
+}

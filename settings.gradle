@@ -1,0 +1,39 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+rootProject.name = "ClautoX"
+
+include ':stub'
+
+include ':annotation'
+include ':appcompat'
+include ':buildcompat'
+include ':core:core', ':core:core-ktx'
+include ':compatibility'
+include ':material:material'
+include ':material:material-chooser', ':material:material-help', ':material:material-preference'
+include ':html:html', ':html:html-ktx'
+include ':preference:multiprocess', ':preference:simplemenu-preference'
+include ':recyclerview:recyclerview-adapter', ':recyclerview:recyclerview-ktx'
+include ':layoutinflater'
+include ':lazy'
+include ':insets'
+include ':widget:borderview', ':widget:switchbar', ':widget:mainswitchbar'
+include ':parcelablelist'
+include ':lifecycle:lifecycle-viewmodel-lazy', ':lifecycle:lifecycle-shared-viewmodel', ':lifecycle:lifecycle-resource-livedata'
+include ':io:little-endian-data-stream'

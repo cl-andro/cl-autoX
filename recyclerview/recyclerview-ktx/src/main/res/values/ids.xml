@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tag_clauto_recyclerView_OverScrollIfContentScrollsListener" type="id"/>
+</resources>

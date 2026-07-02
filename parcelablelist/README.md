@@ -1,0 +1,29 @@
+# ParcelableList
+
+![Maven Central](https://img.shields.io/maven-central/v/com.clauto.cl.parcelablelist/parcelablelist)
+
+Binder has total 1MB buffer size across the process (64KB for each Binder thread).
+When transferring a large list of Parcelable objects (e.g., `getInstalledPackages` with flags like `GET_ACTIVITIES`), 
+it's easy to exceed this limit (`TransactionTooLargeException`). Therefore, the framework has created `android.content.pm.ParceledListSlice` which split the list into multiple transactions.
+
+This library has `ParcelableListSlice` and `StringListSlice` class which is similar to the framework classes.
+
+There is also a base class, `BaseParcelableListSlice`, for extension to transfer non-Parcelable objects. 
+
+## Download
+
+```groovy
+dependencies {
+    implementation "com.clauto.cl.parcelablelist:parcelablelist:<version>"
+}
+```
+
+## Changelog
+
+### 2.0.1
+
+- `androidx.annoation` should be `compileOnly`
+
+### 2.0.0
+
+- Let ParcelableListSlice be a generic type

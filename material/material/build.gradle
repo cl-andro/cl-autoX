@@ -1,0 +1,90 @@
+plugins {
+    id('com.android.library')
+    id('kotlin-android')
+    id('maven-publish')
+    id('signing')
+    id('com.clauto.tools.materialthemebuilder')
+}
+
+android {
+    compileSdkVersion target_sdk
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion target_sdk
+        versionCode 1
+        versionName '2.7.1'
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+materialThemeBuilder {
+    themes {
+        'default' {
+            primaryColor = "#6750A4"
+            lightThemeFormat = "Theme.Material3.Light.Clauto"
+            lightThemeParent = "Base.Material3.Light.Clauto"
+            darkThemeFormat = "Theme.Material3.Dark.Clauto"
+            darkThemeParent = "Base.Material3.Dark.Clauto"
+        }
+        dynamic_colors {
+            dynamicColors = true
+            lightThemeFormat = "Theme.Material3.DynamicColors.Light.Clauto"
+            lightThemeParent = "Base.Material3.Light.Clauto"
+            darkThemeFormat = "Theme.Material3.DynamicColors.Dark.Clauto"
+            darkThemeParent = "Base.Material3.Dark.Clauto"
+        }
+        dynamic_colors_overlay {
+            dynamicColors = true
+            lightThemeFormat = "ThemeOverlay.Material3.DynamicColors.Light.Clauto"
+            lightThemeParent = "ThemeOverlay.Material3.DynamicColors.Light"
+            darkThemeFormat = "ThemeOverlay.Material3.DynamicColors.Dark.Clauto"
+            darkThemeParent = "ThemeOverlay.Material3.DynamicColors.Dark"
+        }
+    }
+    generatePalette = true
+    generatePaletteAttributes = true
+}
+
+configurations.all {
+    exclude group: 'androidx.appcompat', module: 'appcompat'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.annotation:annotation:$androidx_annotation_version"
+    implementation "androidx.interpolator:interpolator:$androidx_interpolator_version"
+    implementation "androidx.core:core-ktx:$androidx_core_version"
+    api "androidx.recyclerview:recyclerview:$androidx_recyclerview_version"
+    api "androidx.swiperefreshlayout:swiperefreshlayout:$androidx_swiperefreshlayout_version"
+    api 'com.google.android.material:material:1.7.0'
+
+    /*api "com.clauto.appcompat:appcompat:$clauto_appcompat_version"
+    implementation "com.clauto.core:core:$clauto_core_version"*/
+
+    api(project(":appcompat"))
+    api(project(":core:core-ktx"))
+    api(project(":layoutinflater"))
+    api(project(":insets"))
+    implementation(project(":widget:switchbar"))
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+
+ext {
+    POM_NAME = "ClautoX Material"
+    POM_DESCRIPTION = "ClautoX Material"
+}

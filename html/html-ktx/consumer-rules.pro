@@ -1,0 +1,1 @@
+-keep class com.clauto.html.text.style.** { *; }

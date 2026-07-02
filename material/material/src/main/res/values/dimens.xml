@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_item_padding">16dp</dimen>
+
+    <dimen name="resolver_max_width">480dp</dimen>
+
+    <item type="dimen" format="float" name="ambient_shadow_alpha">0.02574</item>
+    <item type="dimen" format="float" name="spot_shadow_alpha">0.076</item>
+
+    <dimen name="rd_activity_horizontal_margin">0dp</dimen>
+
+    <dimen name="rd_toolbar_content_padding_start">16dp</dimen>
+    <dimen name="rd_toolbar_content_padding_start_with_navigation">72dp</dimen>
+    <dimen name="rd_toolbar_padding_end">0dp</dimen>
+
+    <dimen name="rd_default_dialog_corner_radius">24dp</dimen>
+    <dimen name="rd_default_button_corner_radius">8dp</dimen>
+
+    <dimen name="rd_material_button_horizontal_margin_amend">-8dp</dimen>
+
+    <dimen name="rd_material_dialog_default_elevation">24dp</dimen>
+    <item name="rd_material_dialog_default_dim_amount" format="float" type="dimen">0.32</item>
+    <integer name="rd_material_dialog_enter_alpha_anim_duration">150</integer>
+    <integer name="rd_material_dialog_enter_scale_anim_duration">225</integer>
+    <integer name="rd_material_dialog_exit_alpha_anim_duration">150</integer>
+    <integer name="rd_material_dialog_exit_scale_anim_duration">150</integer>
+
+    <dimen name="rd_material_dialog_title_divider_material">16sp</dimen>
+    <dimen name="rd_material_dialog_padding_top_material">24dp</dimen>
+
+    <dimen name="rd_material_dialog_line_spacing_extra">2sp</dimen>
+
+    <dimen name="m3_preferred_minimum_touch_target">48dp</dimen>
+
+    <item format="float" name="m3_emphasis_disabled" type="dimen">0.38</item>
+    <item format="float" name="m3_emphasis_disabled_background" type="dimen">0.12</item>
+    <item format="float" name="m3_emphasis_high" type="dimen">0.87</item>
+    <item format="float" name="m3_emphasis_high_disabled" type="dimen">0.33</item>
+    <item format="float" name="m3_emphasis_medium" type="dimen">0.6</item>
+    <item format="float" name="m3_emphasis_medium_disabled" type="dimen">0.23</item>
+</resources>

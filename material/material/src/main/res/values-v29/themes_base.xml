@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.V29.Material3.Light.Clauto" parent="Base.V28.Material3.Light.Clauto">
+        <!--
+        MIUI has some sort of "force dark mode".
+        However it seems that even if the app have correct dark them set, MIUI will still apply its "force dark mode",
+        making colors look crappy.
+        Fortunately it's reported that MIUI respect "android:forceDarkAllowed", so we can set it to false. -->
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+
+    <style name="Base.V29.Material3.Dark.Clauto" parent="Base.V28.Material3.Dark.Clauto">
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+
+    <style name="Base.Material3.Light.Clauto" parent="Base.V29.Material3.Light.Clauto" />
+    <style name="Base.Material3.Dark.Clauto" parent="Base.V29.Material3.Dark.Clauto" />
+
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Material3.Light.Switch.Clauto" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="android:switchMinWidth">52dp</item>
+        <item name="android:minHeight">@dimen/m3_preferred_minimum_touch_target</item>
+        <item name="android:track">@drawable/m3_switch_track_light</item>
+        <item name="android:thumb">@drawable/m3_switch_thumb_light</item>
+        <item name="android:showText">false</item>
+        <item name="showText">false</item>
+    </style>
+
+    <style name="Widget.Material3.Dark.Switch.Clauto" parent="Widget.Material3.Light.Switch.Clauto">
+        <item name="android:track">@drawable/m3_switch_track_dark</item>
+        <item name="android:thumb">@drawable/m3_switch_thumb_dark</item>
+    </style>
+
+    <style name="Widget.Material.Button.Outline" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:stateListAnimator">@animator/material_button_outline_state_list_animator</item>
+        <item name="android:background">?outlineButtonBackground</item>
+        <item name="android:foreground">?outlineButtonForeground</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textColor">?android:colorAccent</item>
+    </style>
+
+    <style name="Widget.Material.Button.Outline.Light" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:stateListAnimator">@animator/material_button_outline_state_list_animator</item>
+        <item name="android:background">?outlineButtonBackground</item>
+        <item name="android:foreground">?outlineButtonForeground</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="Widget.Material.ActionBar.Solid" parent="Widget.MaterialComponents.ActionBar.Solid">
+        <item name="contentInsetStart">@dimen/rd_toolbar_content_padding_start</item>
+        <item name="contentInsetStartWithNavigation">@dimen/rd_toolbar_content_padding_start_with_navigation</item>
+    </style>
+
+    <style name="Widget.Material.ActionBar.Surface" parent="Widget.MaterialComponents.ActionBar.Surface">
+        <item name="contentInsetStart">@dimen/rd_toolbar_content_padding_start</item>
+        <item name="contentInsetStartWithNavigation">@dimen/rd_toolbar_content_padding_start_with_navigation</item>
+    </style>
+
+    <style name="Widget.Material.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton"/>
+
+    <style name="Widget.Material.ExtendedFloatingActionButton.Icon" parent="Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"/>
+
+    <style name="Animation.Material.Dialog" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/rd_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/rd_dialog_exit</item>
+    </style>
+</resources>
