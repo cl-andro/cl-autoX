@@ -13,9 +13,9 @@ ext {
     androidx_swiperefreshlayout_version = "1.1.0"
     androidx_preference_version = "1.2.0"
 
-    clauto_annotation_version = "1.0.0"
+    clauto_annotation_version = "1.0.1"
     clauto_core_version = "1.4.1"
     clauto_html_version = "1.1.2"
-    clauto_preference_multiprocess_version = "1.0.0"
+    clauto_preference_multiprocess_version = "1.0.1"
     clauto_widget_switcherbar_version = "1.0.2"
 }
