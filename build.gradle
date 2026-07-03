@@ -132,6 +132,7 @@ subprojects {
         }
 
         signing {
+            required = project.hasProperty("signing.keyId")
             useGpgCmd()
             sign publishing.publications
         }
