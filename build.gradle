@@ -62,7 +62,13 @@ subprojects {
         } else {
             group = "${rootProject.group}.${project.parent.name}"
         }
-        version = android.defaultConfig.versionName
+        def rawSuiteVersion = project.hasProperty("suiteVersion") ? project.property("suiteVersion").toString() : ""
+        if (rawSuiteVersion.startsWith("v")) {
+            rawSuiteVersion = rawSuiteVersion.substring(1)
+        }
+        def projectVersion = !rawSuiteVersion.isEmpty() ? rawSuiteVersion : android.defaultConfig.versionName
+
+        version = projectVersion
         println("${project.displayName}: ${group}:${project.name}:${version}")
 
         publishing {
@@ -70,7 +76,7 @@ subprojects {
                 mavenJava(MavenPublication) {
                     group project.group
                     artifactId project.name
-                    version android.defaultConfig.versionName
+                    version projectVersion
                     afterEvaluate {
                         from components.release
                     }

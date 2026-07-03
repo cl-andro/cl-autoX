@@ -48,7 +48,7 @@ jobs:
           GPR_READ_TOKEN: ${{ secrets.GPR_READ_TOKEN }}
 
       - name: Publish to GitHub Packages
-        run: ./gradlew publishAllPublicationsToGithubRepository -PsigningKey="${{ secrets.SIGNING_KEY }}" -PsigningPassword="${{ secrets.SIGNING_PASSWORD }}" --no-daemon
+        run: ./gradlew publishAllPublicationsToGithubRepository -PsigningKey="${{ secrets.SIGNING_KEY }}" -PsigningPassword="${{ secrets.SIGNING_PASSWORD }}" -PsuiteVersion="${{ github.event.inputs.version || github.ref_name }}" --no-daemon
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GPR_READ_TOKEN: ${{ secrets.GPR_READ_TOKEN }}
