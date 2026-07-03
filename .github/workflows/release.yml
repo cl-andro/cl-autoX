@@ -5,10 +5,6 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to release'
-        required: true
 
 permissions:
   contents: write
@@ -48,7 +44,7 @@ jobs:
           GPR_READ_TOKEN: ${{ secrets.GPR_READ_TOKEN }}
 
       - name: Publish to GitHub Packages
-        run: ./gradlew publishAllPublicationsToGithubRepository -PsigningKey="${{ secrets.SIGNING_KEY }}" -PsigningPassword="${{ secrets.SIGNING_PASSWORD }}" -PsuiteVersion="${{ github.event.inputs.version || github.ref_name }}" --no-daemon
+        run: ./gradlew publishAllPublicationsToGithubRepository -PsigningKey="${{ secrets.SIGNING_KEY }}" -PsigningPassword="${{ secrets.SIGNING_PASSWORD }}" --no-daemon
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GPR_READ_TOKEN: ${{ secrets.GPR_READ_TOKEN }}
@@ -56,7 +52,7 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.inputs.version || github.ref_name }}
+          tag_name: ${{ github.ref_name }}
           files: |
             **/build/libs/*.jar
             **/build/outputs/aar/*.aar
